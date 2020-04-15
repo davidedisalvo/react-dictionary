@@ -31,11 +31,8 @@ class SingleDefinition extends Component {
     if (definition.word === undefined) {
       if (localStorage.getItem("today")) {
         if (date === localStorage.getItem("today")) {
-          console.log("data di oggi");
           randomWord = localStorage.getItem("word");
         } else {
-          console.log("data di domani");
-
           randomWord = randomWords();
           localStorage.setItem("word", randomWord);
           localStorage.setItem("today", date);
@@ -127,7 +124,15 @@ class SingleDefinition extends Component {
     const value = this.context;
     let definitionToRender = [];
     let word = "";
-    let saveWord = <IoIosHeartEmpty onClick={() => this.saveWord()} />;
+    let saveWord = (
+      <div
+        onClick={() => this.saveWord()}
+        style={{ display: "flex", alignItems: "center" }}
+      >
+        <p class="mr-2 mb-0">Save</p>
+        <IoIosHeartEmpty />
+      </div>
+    );
 
     if (value.definition.definition && value.definition.word) {
       const index = value.favourite.findIndex(
@@ -135,11 +140,25 @@ class SingleDefinition extends Component {
       );
 
       if (index === -1) {
-        saveWord = <IoIosHeartEmpty onClick={() => this.saveWord()} />;
+        saveWord = (
+          <div
+            onClick={() => this.saveWord()}
+            style={{ display: "flex", alignItems: "center" }}
+          >
+            <p class="mr-2 mb-0">Save</p>
+            <IoIosHeartEmpty />
+          </div>
+        );
         word = value.definition.word;
       } else {
         saveWord = (
-          <FaHeart color="red" onClick={() => this.saveWord()}></FaHeart>
+          <div
+            style={{ display: "flex", alignItems: "center" }}
+            onClick={() => this.saveWord()}
+          >
+            <p class="mr-2 mb-0">Saved</p>{" "}
+            <FaHeart color="red" onClick={() => this.saveWord()}></FaHeart>
+          </div>
         );
       }
       word = value.definition.word;

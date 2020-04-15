@@ -12,7 +12,6 @@ class WordProvider extends Component {
 
   // Methods to update state
   setDefinition = (definition) => {
-    console.log(definition);
     this.setState((prevState) => ({ definition }));
   };
   saveWord = (fav) => {
