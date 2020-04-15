@@ -1,0 +1,43 @@
+@import "../variable.scss";
+.singleDefinition {
+}
+h3 {
+  color: $primaryColor;
+  text-transform: uppercase;
+}
+h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: $primaryColor !important;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+p {
+  font-weight: normal !important;
+  span {
+    color: $primaryColor;
+    font-size: 20px;
+  }
+}
+
+.suggestion {
+  cursor: pointer;
+  font-weight: bold;
+}
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}
+
+.titleTheDay {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 0px;
+}

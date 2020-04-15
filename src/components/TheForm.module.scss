@@ -1,0 +1,11 @@
+@import "../variable.scss";
+.inputGroup {
+  overflow: hidden;
+  align-items: center;
+}
+
+.btn-info {
+  position: absolute;
+  right: 15px;
+  background-color: $primaryColor;
+}
